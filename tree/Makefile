@@ -1,4 +1,4 @@
-flags = -Wall -O2 -std=c1x
+flags = -Wall -O2 -std=c1x -g
 ldflags =
 
 all: tree
@@ -10,7 +10,7 @@ tree.o: tree.c
 	gcc ${flags} -c $^
 
 run: tree
-	./tree
+	tree.exe
 
 clean:
-	del /Q *.o tree
+	del /Q *.o tree.exe
