@@ -1,12 +1,16 @@
-flags=-Wall -O2 -std c2x
-ldflags=
+flags = -Wall -O2 -std=c1x
+ldflags =
+
 all: tree
 
 tree: tree.o
-	cc ${flags} $^ -o $@ ${ldflags}
+	gcc ${flags} $^ -o $@ ${ldflags}
 
 tree.o: tree.c
-	cc ${flags} -c $^
+	gcc ${flags} -c $^
+
+run: tree
+	./tree
 
 clean:
-	rm -f *.o tree
+	del /Q *.o tree
